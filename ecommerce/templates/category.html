@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+   <div class="row mt-3">
+        <div class="col-12">
+    <img src="{% static 'images/banner1.jpg' %}" height="400px" width="100%"></div>
+   </div>
+
+<div class="row mt-3 px-3" style="margin-bottom:100px">
+    <div class="col-12">
+        <h1 class="text-center fw-bold text-light mt-5 mb-5">Our Collections</h1>
+        <p style="text-align:justify;line-height:2.5;" class="fs-5">Ecommerce refers to when individuals or companies buy and sell goods or services online. Ecommerce can be carried out on a smartphone app or online store, on a social media platform, or through an online marketplace. You can participate in ecommerce anywhere you can establish an internet connection. Common examples of ecommerce include online shopping, electronic payments, online auctions, and internet banking. The goal of ecommerce for the seller is to drive online sales using digital marketing strategies.
+        </p>
+        <div>
+
+
+</div>
+<div class="container mb-5">
+    <div class="row" style="margin-bottom:200px">
+{% for i in cat %}
+        <div class="col-sm-4">
+            <div class="card mx-auto border border-2 border-rounded " style="width: 18rem;">
+  <img src="{{i.image.url}}" height="200px" width="100%" class="card-img-top" alt="...">
+  <div class="card-body text-center">
+    <h5 class="card-title">{{i.name}}</h5>
+
+    <a href="{% url 'shop:products' i.id %}" class="btn btn-danger">Products</a>
+  </div>
+</div>
+        </div>
+{% endfor %}
+
+
+
+
+{% endblock %}

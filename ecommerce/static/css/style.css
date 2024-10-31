@@ -1,0 +1,14 @@
+
+body
+{
+background-color:#5DE2E7;
+}
+
+.footer
+{
+position:fixed;
+bottom:0;
+left:0;
+background-color:white;
+width:100%;
+}
